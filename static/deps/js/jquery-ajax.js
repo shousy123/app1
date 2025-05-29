@@ -210,4 +210,67 @@ $(document).ready(function () {
             $("#deliveryAddressField").hide();
         }
     });
+
+// --- НАЧАЛО НОВОГО КОДА ДЛЯ АКТИВНЫХ КАТЕГОРИЙ ---
+
+$(document).ready(function() {
+    // Функция для определения и установки активной категории
+    function setActiveCategory() {
+        // Получаем текущий путь URL
+        const currentPath = window.location.pathname; // Например: /catalog/spalnya/ или /catalog/all/
+
+        let activeSlug = 'all'; // По умолчанию выделяем "Все товары"
+
+        // Пытаемся извлечь slug из URL
+        // Регулярное выражение: ищет /catalog/ (или /search/) и затем что-то до следующего / или конца строки
+        // Учитываем как /catalog/<slug>/ так и /catalog/all/
+        const catalogMatch = currentPath.match(/\/catalog\/(.+?)\/?$/);
+        
+        if (catalogMatch && catalogMatch[1]) {
+            activeSlug = catalogMatch[1];
+        } else if (currentPath.endsWith('/catalog/')) {
+            activeSlug = 'all'; // Если URL заканчивается на /catalog/, это "Все товары"
+        }
+        
+        // Обработка случая, если это страница поиска (пользователь на /search/?q=...)
+        // Если вы используете отдельный URL для поиска (например, /search/),
+        // и хотите, чтобы в этом случае тоже выделялись "Все товары":
+        // const searchMatch = currentPath.match(/\/search\//);
+        // if (searchMatch) {
+        //     activeSlug = 'all'; // При поиске активируем "Все товары"
+        // }
+
+
+        // Убираем класс 'active' у всех элементов категорий
+        $('.list-group-item-action').removeClass('active');
+
+        // Добавляем класс 'active' к элементу, data-slug которого соответствует текущему activeSlug
+        $(`.list-group-item-action[data-slug="${activeSlug}"]`).addClass('active');
+        
+        // Дополнительная проверка на случай, если activeSlug не был найден в DOM,
+        // но URL подразумевал "Все товары" (например, /catalog/ и не было data-slug="all" элемента)
+        if ($(`.list-group-item-action[data-slug="${activeSlug}"]`).length === 0 && activeSlug === 'all') {
+             // Если ссылка "Все товары" не найдена по data-slug="all",
+             // но должна быть активна (например, на /catalog/),
+             // можно попытаться активировать первую ссылку, если она считается "Все товары"
+             // или просто оставить как есть, если "Все товары" всегда есть с data-slug="all"
+             // Для вашего случая, если вы добавили <a data-slug="all">, это не понадобится
+        }
+    }
+
+    // Вызываем функцию при загрузке страницы
+    setActiveCategory();
+
+    // Логика для моментальной подсветки при клике (опционально, т.к. страница перезагрузится)
+    // Оставлено, чтобы показать, что e.preventDefault() здесь не нужен
+    $('.list-group-item-action').on('click', function(e) {
+        // Убираем класс 'active' у всех элементов в этой же группе
+        $(this).closest('.list-group').find('.list-group-item-action').removeClass('active');
+        // Добавляем класс 'active' к элементу, на который кликнули
+        $(this).addClass('active');
+        // e.preventDefault(); здесь нет, поэтому ссылка работает и страница перезагружается
+    });
+});
+// --- КОНЕЦ НОВОГО КОДА ДЛЯ АКТИВНЫХ КАТЕГОРИЙ ---
+
 });

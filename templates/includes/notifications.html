@@ -1,38 +1,38 @@
 {% load static %}
 
+{# Уведомления об ошибках формы (например, при неверном логине) #}
 {% if form.non_field_errors %}
-    <div class="container mt-4">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="alert alert-danger alert-dismissible fade show custom-shadow" role="alert">
-                    {{form.non_field_errors}}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            </div>
-        </div>
+<div class="position-fixed top-0 start-50 translate-middle-x mt-custom-alert z-3">
+    <div class="alert alert-danger alert-dismissible fade show custom-shadow rounded-3" role="alert">
+        <i class="fas fa-exclamation-circle me-2"></i> {{ form.non_field_errors }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
+</div>
 {% endif %}
 
-<div class="container mt-4">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            {% if messages %}
-                {% for message in messages %}
-                    {% if message.tags == 'success' %}
-                    <div id="notification" class="position-fixed start-50 translate-middle-x z-3 alert alert-success fade show custom-shadow" role="alert">
-                        {{ message }}
-                    </div>
-                    {% endif %}
-                    {% if message.tags == 'warning' %}
-                    <div id="notification" class="position-fixed start-50 translate-middle-x z-3 alert alert-danger fade show custom-shadow" role="alert">
-                        {{ message }}
-                    </div>
-                    {% endif %}
-                {% endfor %}
-            {% else %}
-            <div id="jq-notification" class="position-fixed start-50 translate-middle-x z-3 alert alert-success fade show custom-shadow" style="display: none;" role="alert">
+{# Сообщения Django Messages (успех, предупреждение/ошибка) #}
+<div class="position-fixed top-0 start-50 translate-middle-x mt-custom-alert z-3">
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+            <div class="alert alert-success alert-dismissible fade show custom-shadow rounded-3" role="alert">
+                <i class="fas fa-check-circle me-2"></i> {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             {% endif %}
-        </div>
+            {% if message.tags == 'warning' %}
+            <div class="alert alert-danger alert-dismissible fade show custom-shadow rounded-3" role="alert"> {# Используем alert-danger для 'warning' чтобы соответствовать вашему текущему поведению #}
+                <i class="fas fa-exclamation-triangle me-2"></i> {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %}
+            {# Если у вас есть другие типы сообщений (info), добавьте их здесь #}
+        {% endfor %}
+    {% else %}
+    {# Уведомление для JavaScript (если оно появляется динамически) #}
+    <div id="jq-notification" class="mt-custom-alert alert alert-success alert-dismissible fade show custom-shadow rounded-3" style="display: none;" role="alert">
+        <i class="fas fa-check-circle me-2"></i> <span id="jq-notification-text"></span> {# Добавим span для текста, если он вставляется JS-ом #}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
+    {% endif %}
 </div>

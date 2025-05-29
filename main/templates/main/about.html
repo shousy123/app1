@@ -1,26 +1,46 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block css %}
-    <link rel="stylesheet" href="{% static "deps/css/my_footer_css.css" %}">
-{% endblock css %}
-
-{% block modal_cart %}
-{% include "includes/cart_button.html" %}
-{% endblock modal_cart %}
-
 {% block content %}
-<div class = "mt-5 pt-5 bg-white custom-shadow rounded">
-    <h2 class="m-2"><strong>{{ content }}</strong></h2>
-    <p class="m-2">{{ text_on_page }}</p>
+<div class="mg12-">
+        <div class="my-5 pt-5 px-2 pb-2 bg-white custom-shadow rounded">
+            <h2 class="m-2"><strong>О нас</strong></h2>
+            <p class="m-2" style="font-size: 1.2rem;">Добро пожаловать в DRY Tech — ваш идеальный партнер в мире цифровой и бытовой техники. Наша философия основана на принципах DRY (Don't Repeat Yourself), что для нас означает
+                эффективность, продуманность и отсутствие всего лишнего в каждом аспекте вашей покупки.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="placeholder_image1.jpg" alt="Минималистичный дизайн техники DRY Tech"
+                        class="img-fluid rounded mb-3">
+                </div>
+                <div class="col-md-6">
+                    <p class="m-2" style="font-size: 1.2rem;">В современном мире, где информации и товаров слишком много, легко запутаться. Мы в DRY Tech стремимся упростить ваш выбор, предлагая только те решения, которые доказали свою надежность, производительность и истинную ценность. Мы тщательно отбираем каждый продукт, будь то новейший смартфон, умный домашний гаджет или крупная бытовая техника, чтобы вы получили максимум функциональности и комфорта без ненужных усложнений.</p>
+                </div>
+            </div>
+        </div>
+        <div class="my-5 pt-3 px-2 pb-2 bg-white custom-shadow rounded">
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-unstyled">
+                        <li class="m-2" style="font-size: 1.2rem;"><strong>Оптимальный выбор:</strong> Забудьте о
+                            бесконечном поиске. Мы предлагаем только актуальные, высококачественные и проверенные решения от ведущих мировых производителей.</li>
+                        <li class="m-2" style="font-size: 1.2rem;"><strong>Эффективные покупки:</strong> Удобный и
+                            интуитивно понятный сайт, быстрая доставка и простая процедура заказа — мы ценим ваше время и делаем процесс покупки максимально комфортным.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-unstyled">
+                        <li class="m-2" style="font-size: 1.2rem;"><strong>Надежность без компромиссов:</strong> Мы верим в долговечность. Наша техника служит долго, снижая потребность в частых заменах и ремонтах.</li>
+                        <li class="m-2" style="font-size: 1.2rem;"><strong>Инновации без излишеств:</strong> Мы следим за передовыми технологиями, но предлагаем только те из них, что действительно упрощают и улучшают вашу жизнь, а не просто добавляют сложности.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <img src="placeholder_image2.jpg" alt="Разнообразие техники в DRY Tech" class="img-fluid rounded mb-3"
+                        style="max-width: 80%;">
+                </div>
+            </div>
+            <p class="m-2" style="font-size: 1.2rem;">Выбирая DRY Tech, вы выбираете не просто магазин, а партнера, который ценит ваше время, деньги и стремится предоставить вам лучшее. Мы делаем технологии доступными и понятными, исключая все лишнее. Присоединяйтесь к сообществу умных покупателей DRY Tech и откройте для себя мир техники, где каждая деталь имеет значение, а ненужных повторений просто нет.</p>
+        </div>
 </div>
 {% endblock content %}
-
-{% block footer %}
-    <footer class="py-4 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Home Python Hub Studio 2023</p>
-        </div>
-    </footer>
-{% endblock footer %}
-

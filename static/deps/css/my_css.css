@@ -1,38 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap');
+
 body {
-  background-image: url("../images/bg-image.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
-  background-size: cover;
-  height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FCFCFC;
+    color: #343A40;
+    margin: 0;
+    padding-top: 56px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content-area {
+    flex: 1;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.navbar {
+    border-bottom: 1px solid #E0E0E0;
+    background-color: #FFFFFF !important;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: #007BFF !important;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: #6C757D !important;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #007BFF !important;
 }
 
 .dropdown-toggle::after {
-  content: none;
+    content: none;
 }
 
-.custom-shadow {
-  box-shadow: 5px 5px 25px 19px #000000;
+.form-control {
+    border-radius: 0.25rem;
+    border-color: #CED4DA;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn-primary {
+    background-color: #007BFF;
+    border-color: #007BFF;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline-primary {
+    color: #007BFF;
+    border-color: #007BFF;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007BFF;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+}
+
+.btn-success {
+    background-color: #28A745;
+    border-color: #28A745;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .product_id {
-  color: gray;
-  font-size: 15px;
+    color: #ADB5BD;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+.badge.bg-success {
+    background-color: #28A745 !important;
+}
+
+.custom-shadow-light {
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05) !important;
 }
 
 .badge.bg-warning.text-dark {
-  position: absolute;
-  top: 10px;
-  right: 5px;
-  z-index: 1;
-  padding: 5px 10px;
-  border-radius: 3px;
-  font-size: 1rem;
-  box-shadow: 2px 2px 15px 9px #000000;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    padding: 0.3em 0.6em;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    background-color: #FD7E14 !important;
+    color: #fff !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .badge-banner {
-  top: 80%;
-  border-radius: 15px;
-  font-size: 0.7rem;
+    top: 80%;
+    border-radius: 0.75rem;
+    font-size: 0.6rem;
+    padding: 0.2em 0.5em;
+    background-color: #17A2B8 !important;
+    color: #fff !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #212529;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.text-primary {
+    color: #007BFF !important;
+}
+
+.text-dark {
+    color: #212529 !important;
+}
+
+.text-secondary {
+    color: #6C757D !important;
+}
+
+p {
+    color: #495057;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.lead {
+    color: #6C757D;
+    font-size: 1.25rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+}
+
+.card {
+    border: 1px solid #F0F0F0;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.12);
+}
+
+.card-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #212529;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: #888;
+    min-height: 45px;
+}
+
+.price-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #007BFF;
+}
+
+.modal-content {
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    border-bottom: 1px solid #E9ECEF;
+    padding-bottom: 1rem;
+}
+
+.modal-title {
+    font-weight: 600;
+    color: #212529;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.table {
+    --bs-table-bg: #FFFFFF;
+}
+
+body {
+    background-image: none !important;
+}
+
+.fas {
+    margin-right: 0.3rem;
+}
+
+.my-centered-button1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Стили для фиксированного виджета корзины --- */
+.fixed-cart-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1050;
+}
+
+.fixed-cart-widget .btn {
+    width: 60px;   /* Задайте фиксированную ширину */
+    height: 60px;  /* Задайте фиксированную высоту, равную ширине */
+    display: flex; /* Используйте flexbox для центрирования содержимого */
+    justify-content: center; /* Центрировать по горизонтали */
+    align-items: center;     /* Центрировать по вертикали */
+    padding: 0 !important; /* Уберите padding, так как мы центрируем flexbox'ом */
+}
+
+
+.fixed-cart-widget .badge {
+    font-size: 0.7em;
+    padding: .4em .6em;
+    white-space: nowrap;
+}
+
+.mg12-{
+    margin-top: -6rem;
+}
+
+.mtrem2{
+    margin-top: 2rem;
+}
+
+/* --- Стили для активных элементов навигации в профиле --- */
+.nav-pills .nav-link.active {
+    color: white !important;
+}
+
+.mt-custom-alert {
+    margin-top: 80px; /* Здесь также укажите нужное значение */
 }
