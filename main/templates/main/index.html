@@ -12,12 +12,14 @@
                     <div class="row gx-4 gy-4">
                         <div class="col-md-6 col-lg-4">
                             <div class="card h-100 border-0 shadow-sm">
-                                <img src="{% static "deps/images/sc.jpg" %}" class="card-img-top p-3"
+                                <img src="{% static "deps/images/tg.png" %}" class="card-img-top p-3"
                                     alt="Последние товары">
                                 <div class="card-body">
-                                    <h5 class="card-title text-dark">Почти раскупили</h5>
-                                    <p class="card-text text-muted">Товары пользующиеся спросом</p>
-                                    <a href="#" class="btn btn-outline-primary mt-2">Подробнее</a>
+                                    <h5 class="card-title text-dark">Присоединяйтесь к нам в Telegram!</h5>
+                                    <p class="card-text text-muted">Возможность узнать статус заказа и просматривать каталог прямо в Telegram</p>
+                                    <a href="https://t.me/DRY_Tech_Bot" class="btn btn-outline-primary mt-2">
+                                        Перейти
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -26,19 +28,19 @@
                                 <div class="card-body">
                                     <h5 class="card-title text-dark more">Каталог</h5>
                                     <p class="card-text text-muted more1">Все товары DRY Tech</p>
-                                    <a href="{% url "catalog:index" "all" %}" class="btn btn-outline-primary mt-2">Подробнее</a>
+                                    <a href="{% url "catalog:index" "all" %}" class="btn btn-outline-primary mt-2">Перейти</a>
                                 </div>
                                 <img src="{% static "deps/images/catalog.webp" %}" class="card-img-top p-3" alt="Каталог">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="card h-100 border-0 shadow-sm">
-                                <img src="{% static "deps/images/acs.webp" %}" class="card-img-top p-3"
+                                <img src="{% static "deps/images/lp.png" %}" class="card-img-top p-3"
                                     alt="Акции">
                                 <div class="card-body">
-                                    <h5 class="card-title text-dark">Акции</h5>
-                                    <p class="card-text text-muted">Не упустите выгодные скидки и акции!</p>
-                                    <a href="#" class="btn btn-outline-primary mt-2">Подробнее</a>
+                                    <h5 class="card-title text-dark">Ваш личный кабинет DRY Tech</h5>
+                                    <p class="card-text text-muted">Просматривайте историю заказов, управляйте персональными данными</p>
+                                    <a href="{% url "user:profile" %}" class="btn btn-outline-primary mt-2">Перейти</a>
                                 </div>
                             </div>
                         </div>

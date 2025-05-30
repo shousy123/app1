@@ -36,7 +36,7 @@ def login(request) :
         form = UserLoginForm()
 
     context = { 
-        'title': 'Home - Авторизация',
+        'title': 'DRY Tech - Авторизация',
         'form' : form,
         }
     return render(request, 'users/login.html', context)
@@ -62,7 +62,7 @@ def registration(request) :
         form = UserRegistrationForm()
 
     context = { 
-        'title': 'Home - Регистрация',
+        'title': 'DRY Tech - Регистрация',
         'form' : form
         }
     return render(request, 'users/registration.html', context)
@@ -91,7 +91,7 @@ def profile(request) :
     )
 
     context = { 
-        'title': 'Home - Кабинет',
+        'title': 'DRY Tech - Профиль',
         'form': form,
         'orders': orders
         }

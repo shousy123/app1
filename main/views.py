@@ -8,8 +8,8 @@ def index(request):
 
     context = {
 
-        'title': 'HOME - Главная',
-        'content': 'Магазин мебели HOME',
+        'title': 'DRY Tech - Главная',
+        'content': 'DRY Tech',
 
     }
 
@@ -19,7 +19,7 @@ def about(request):
 
     context = {
 
-        'title': 'HOME - О нас',
+        'title': 'DRY Tech - О нас',
         'content': 'О нас',
         'text_on_page': 'Текст о том почему этот магазин такой хороший и товар такой крутой',
 
