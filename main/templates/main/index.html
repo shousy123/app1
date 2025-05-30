@@ -12,7 +12,7 @@
                     <div class="row gx-4 gy-4">
                         <div class="col-md-6 col-lg-4">
                             <div class="card h-100 border-0 shadow-sm">
-                                <img src="№" class="card-img-top p-3"
+                                <img src="{% static "deps/images/sc.jpg" %}" class="card-img-top p-3"
                                     alt="Последние товары">
                                 <div class="card-body">
                                     <h5 class="card-title text-dark">Почти раскупили</h5>
@@ -23,20 +23,20 @@
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="card h-100 border-0 shadow-sm">
-                                <img src="https://via.placeholder.com/300x200" class="card-img-top p-3" alt="Каталог">
                                 <div class="card-body">
                                     <h5 class="card-title text-dark more">Каталог</h5>
                                     <p class="card-text text-muted more1">Все товары DRY Tech</p>
-                                    <a href="#" class="btn btn-outline-primary mt-2">Подробнее</a>
+                                    <a href="{% url "catalog:index" "all" %}" class="btn btn-outline-primary mt-2">Подробнее</a>
                                 </div>
+                                <img src="{% static "deps/images/catalog.webp" %}" class="card-img-top p-3" alt="Каталог">
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="card h-100 border-0 shadow-sm">
-                                <img src="https://via.placeholder.com/300x200" class="card-img-top p-3"
-                                    alt="Акционные товары">
+                                <img src="{% static "deps/images/acs.webp" %}" class="card-img-top p-3"
+                                    alt="Акции">
                                 <div class="card-body">
-                                    <h5 class="card-title text-dark">Акционные предложения</h5>
+                                    <h5 class="card-title text-dark">Акции</h5>
                                     <p class="card-text text-muted">Не упустите выгодные скидки и акции!</p>
                                     <a href="#" class="btn btn-outline-primary mt-2">Подробнее</a>
                                 </div>
